@@ -25,6 +25,42 @@ document.addEventListener("DOMContentLoaded", function()
             ease: "power2.inOut"
         });
     }, 600)
+
+
+    setTimeout(()=> {
+
+        const letters = document.querySelectorAll('#valery_name .letter');
+        const images = document.querySelectorAll('#valery_image .image');
+    
+        let previousIndex = -1;
+
+        function animateLetterAndShowImage() {
+            if (previousIndex !== -1) {
+                // Восстановить предыдущую букву и изображение
+                gsap.to(letters[previousIndex], { opacity: 1, duration: 1 });
+                gsap.to(images[previousIndex], { opacity: 0, duration: 1 });
+            }
+
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * letters.length);
+            } while (randomIndex === previousIndex); // Избегаем повторного выбора того же индекса
+
+            const selectedLetter = letters[randomIndex];
+            const correspondingImage = images[randomIndex];
+
+            // Анимировать текущую букву и изображение
+            gsap.to(selectedLetter, { opacity: 0, duration: 1, onComplete: () => {
+                gsap.to(correspondingImage, { opacity: 1, duration: 1 });
+            }});
+
+            // Обновить индекс предыдущей анимации
+            previousIndex = randomIndex;
+        }
+
+        setInterval(animateLetterAndShowImage, 2000);
+
+    }, 1500)
 })
 
 
