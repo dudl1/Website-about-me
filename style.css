@@ -8,11 +8,20 @@ body {
     text-decoration: none;
     font-optical-sizing: auto;
     font-family: "Inter", sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
     background: #000;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+canvas {
+    position: absolute;
+    top: -32px;
+    left: -35px;
+    width: 150px !important;
+    height: 150px !important;
 }
 
 header {
@@ -39,6 +48,10 @@ header {
 
 .valery_burger.active {
     opacity: 0;
+}
+
+.valery_photo {
+    cursor: pointer;
 }
 
 .valery_photo > img {
@@ -85,12 +98,14 @@ svg {
     transform: translateY(-15px);
 }
 
-#valery_image > .image {
+.image {
     display: block;
     width: 35px;
     height: 35px;
     object-fit: contain;
+    transform: translateY(-45px);
     opacity: 0;
+    z-index: -9;
 }
 
 .menu {
@@ -102,11 +117,12 @@ svg {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(99, 99, 99, 0.5);
+    background: rgb(105 105 105 / 50%);
     backdrop-filter: blur(13px);
-    opacity: 0.5;
+    opacity: 0.3;
+    z-index: 999;
     transform: translateX(100%);
-    transition: .3s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
 .menu.active {
@@ -135,9 +151,94 @@ svg {
     opacity: 0;
 }
 
+.bloks {
+    pointer-events: none;
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    height: calc(100% - 80px);
+    background: #000000;
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+.bloks.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.bloks > div {
+    width: 100%;
+    height: 100%;
+}
+
+.blok_stack-skill {
+    padding: 23px 30px 23px 20px;
+    opacity: 0;
+}
+
+.blok_stack-skill:last-child {
+    padding-bottom: 50px;
+}
+
+.header {
+    display: grid;
+    grid-template-areas: "a a a";
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header > .image {
+    transform: none;
+    opacity: 1;
+    z-index: 9;
+}
+
+.header > .title {
+    font-size: 25px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.header > .svg_more > svg {
+    transform: rotateX(0deg);
+    transition: .8s ease;
+}
+
+.blok_stack-skill.active .header .svg_more > svg {
+    transform: rotateX(180deg);
+}
+
+.blok_stack-skill .more {
+    margin-top: 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: .8s ease;
+}
+
+.blok_stack-skill.active .more {
+    margin-top: 15px;
+    max-height: 120px;
+}
+
+.blok_stack-skill > .more > span {
+    color: #ffffff;
+}
+
+
 @media screen and (min-width: 500px) {
     header {
         padding: 35px;
+    }
+
+    .bloks {
+        position: relative;
+        transform: translateY(-100px);
+    }
+
+    .blok_stack-skill {
+        padding: 30px 45px 30px 35px;
     }
 
     .valery_photo,

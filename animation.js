@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function()
     });
 
     setTimeout(()=> {
-        gsap.from(".letter", {
-            y: -10,
+        gsap.from(".letter-img", {
+            y: -8,
             opacity: 0,
             duration: 1.2,
             stagger: 0.1,
@@ -29,27 +29,27 @@ document.addEventListener("DOMContentLoaded", function()
 
     setTimeout(()=> {
 
-        const letters = document.querySelectorAll('#valery_name .letter');
-        const images = document.querySelectorAll('#valery_image .image');
-    
+        const letterImages = document.querySelectorAll('#valery_name .letter-img');
+
         let previousIndex = -1;
 
         function animateLetterAndShowImage() {
             if (previousIndex !== -1) {
                 // Восстановить предыдущую букву и изображение
-                gsap.to(letters[previousIndex], { opacity: 1, duration: 1 });
-                gsap.to(images[previousIndex], { opacity: 0, duration: 1 });
+                const previousLetter = letterImages[previousIndex].querySelector('.letter');
+                const previousImage = letterImages[previousIndex].querySelector('.image');
+                gsap.to(previousLetter, { opacity: 1, duration: 1 });
+                gsap.to(previousImage, { opacity: 0, duration: 1 });
             }
 
             let randomIndex;
             do {
-                randomIndex = Math.floor(Math.random() * letters.length);
+                randomIndex = Math.floor(Math.random() * letterImages.length);
             } while (randomIndex === previousIndex); // Избегаем повторного выбора того же индекса
 
-            const selectedLetter = letters[randomIndex];
-            const correspondingImage = images[randomIndex];
+            const selectedLetter = letterImages[randomIndex].querySelector('.letter');
+            const correspondingImage = letterImages[randomIndex].querySelector('.image');
 
-            // Анимировать текущую букву и изображение
             gsap.to(selectedLetter, { opacity: 0, duration: 1, onComplete: () => {
                 gsap.to(correspondingImage, { opacity: 1, duration: 1 });
             }});
@@ -58,26 +58,7 @@ document.addEventListener("DOMContentLoaded", function()
             previousIndex = randomIndex;
         }
 
-        setInterval(animateLetterAndShowImage, 2000);
+        setInterval(animateLetterAndShowImage, 2200);
 
-    }, 1500)
+    }, 500)
 })
-
-
-const menu = document.querySelector(".menu");
-
-const valery_burger = document.querySelector(".valery_burger"),
-burder_close = document.querySelector(".burder_close");
-
-
-valery_burger.onclick = function()
-{
-    this.classList.add("active");
-    menu.classList.add("active");
-}
-
-burder_close.onclick = function()
-{
-    valery_burger.classList.remove("active");
-    menu.classList.remove("active");
-}
