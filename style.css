@@ -16,14 +16,6 @@ body {
     overflow-x: hidden;
 }
 
-canvas {
-    position: absolute;
-    top: -32px;
-    left: -35px;
-    width: 150px !important;
-    height: 150px !important;
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -65,6 +57,30 @@ svg {
     width: 25px;
     height: 25px;
     fill: #ffffff;
+}
+
+.burger_svg {
+    opacity: 1;
+    transform: scale(1);
+    transition: .5s ease;
+}
+
+.burger_svg.active {
+    transform: scale(0.5);
+    opacity: 0;
+}
+
+.close_svg {
+    position: absolute;
+    right: 30px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: .5s ease;
+}
+
+.close_svg.active {
+    transform: scale(1);
+    opacity: 1;
 }
 
 .text_animated {
@@ -193,6 +209,7 @@ svg {
     transform: none;
     opacity: 1;
     z-index: 9;
+    transition: .5s ease;
 }
 
 .header > .title {
@@ -204,6 +221,11 @@ svg {
 .header > .svg_more > svg {
     transform: rotateX(0deg);
     transition: .8s ease;
+}
+
+.blok_stack-skill.active > .header > img {
+    width: 41px;
+    height: 41px;
 }
 
 .blok_stack-skill.active .header .svg_more > svg {
@@ -224,6 +246,12 @@ svg {
 
 .blok_stack-skill > .more > span {
     color: #ffffff;
+    opacity: 0;
+    transition: .6s ease;
+}
+
+.blok_stack-skill.active > .more > span {
+    opacity: 1;
 }
 
 
