@@ -16,6 +16,38 @@ body {
     overflow-x: hidden;
 }
 
+.page_loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 99;
+}
+
+.page_loading > span {
+    color: #ffffff;
+    font-size: 55px;
+    font-weight: 600;
+    animation: loading .8s ease infinite alternate;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+header,
+.bloks {
+    max-width: 1200px;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -42,10 +74,6 @@ header {
     opacity: 0;
 }
 
-.valery_photo {
-    cursor: pointer;
-}
-
 .valery_photo > img {
     width: 100%;
     height: 100%;
@@ -57,6 +85,10 @@ svg {
     width: 25px;
     height: 25px;
     fill: #ffffff;
+}
+
+.burder_close {
+    transform: translateX(-20px);
 }
 
 .burger_svg {
@@ -146,6 +178,15 @@ svg {
     transform: translateX(0%);
 }
 
+.header_burger {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+}
+
 .menu_item {
     margin: 15px 0 15px 0;
     text-align: center;
@@ -155,12 +196,6 @@ svg {
     font-weight: 600;
     word-spacing: -1px;
     cursor: pointer;
-}
-
-.burder_close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
 }
 
 .valery_burger.active {
@@ -256,6 +291,11 @@ svg {
 
 
 @media screen and (min-width: 500px) {
+    body {
+        display: grid;
+        justify-content: center;
+    }
+
     header {
         padding: 35px;
     }
@@ -282,9 +322,31 @@ svg {
         fill: #ffffff;
     }
 
-    .burder_close {
+    .header_burger {
+        display: flex;
+        justify-content: flex-end;
         position: absolute;
-        top: 35px;
-        right: 35px;
+        top: 0;
+        width: 100%;
+        max-width: 1200px;
+        padding: 35px;
+    }
+
+    .burder_close {
+        transform: translateX(-35px);
+    }
+
+    .close_svg {
+        right: 47px;
+    }
+
+    .blok_stack-skill .more {
+        width: calc(100% - 30px);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .blok_stack-skill > .more > span {
+        font-size: 17px;
     }
 }

@@ -1,5 +1,9 @@
+const page_loading = document.querySelector(".page_loading");
+
 document.addEventListener("DOMContentLoaded", function()
 {
+    page_loading.remove();
+
     gsap.from("header", {
         y: -10,
         opacity: 0,
