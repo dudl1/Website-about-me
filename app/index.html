@@ -12,10 +12,43 @@
       }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css">
-    <script type="module" crossorigin src="./assets/index-B-_sgcbp.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-D3db9-Ru.css">
+    <script type="module" crossorigin src="/assets/index-CtsTcKcT.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Cb68eE8c.css">
   </head>
   <body>
     <div id="app" class="app"></div>
+    <script>
+        async function samsum_text(event) {
+          event.srcElement.children[0].classList.toggle("active");
+
+          if (event.srcElement.children[0].classList.contains("active")) {
+            if (event.srcElement.children[0].children[1].innerText === "") {
+              const message = event.target.firstChild.textContent;
+              const url = "https://8000-dudl1-pythonserver-dnpny13fizz.ws-eu115.gitpod.io/?message=" + encodeURIComponent(message);
+
+              try {
+                const response = await fetch(url, {
+                  method: 'GET',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  }
+                });
+
+                if (!response.ok) {
+                  throw new Error("Ошибка HTTP: " + response.status);
+                }
+
+                const data = await response.json();
+                event.srcElement.children[0].children[0].classList.remove("active");
+
+                event.srcElement.children[0].children[0].innerText = "Сокращенный текст";
+                event.srcElement.children[0].children[1].innerText = data.summarization;
+              } catch (error) {
+                document.getElementById('response').textContent = "Ошибка: " + error.message;
+              }
+            }
+          }
+        }
+    </script>
   </body>
 </html>
