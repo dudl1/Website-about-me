@@ -1,0 +1,37 @@
+[
+    {
+        "img_url": "icons/web.png",
+        "title": "Вёрстка сайтов",
+        "more": "Занимаюсь вёрсткой сайтов – HTML (включая Pug и Haml) и CSS (включая SCSS; Bootstrap, Tailwind, UIKit и другие), Javascript."
+    },
+    {
+        "img_url": "icons/js.png",
+        "title": "Javascript",
+        "more": "Использую как чистый Javascript так и технологии на его основе: Svelte.js, Vue.js, Nodejs, Mithril.js, Transformers.js, Playcanvas, Brain.js. Реже всего Assemblyscript (Webassembly)."
+    },
+    {
+        "img_url": "icons/dart.png",
+        "title": "Dart",
+        "more": "Использую Flutter для создания в первую очередь Android приложений, а также Web приложений."
+    },
+    {
+        "img_url": "icons/python.png",
+        "title": "Python",
+        "more": "В основном использую: Huggingface, Google colab, Pytorch, SpaCy. Точно настраивал - LLM модели (Mamba, Facebook, GPT) и NER модель (SpaCy)."
+    },
+    {
+        "img_url": "icons/supabase.png",
+        "title": "Supabase",
+        "more": "Настраиваю базу данных - регистрация пользователей, отправка сообщений и картинок в реальном времени, и так далее. Редко работаю с Firebase."
+    },
+    {
+        "img_url": "icons/figma.png",
+        "title": "Figma",
+        "more": "Создаю Web и Android интерфесы."
+    },
+    {
+        "img_url": "icons/github_light.png",
+        "title": "Github",
+        "more": "Использую для хранения проектов. Знаю базовые команды git. Иногда прибегаю Github pages."
+    }
+]
