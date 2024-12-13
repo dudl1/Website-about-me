@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    outline: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+
+/********************* Layers_Main *********************/
+.Layers_Main {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Layers_Main header {
+    margin-top: 70px;
+}
+
+.information_text {
+    display: flex;
+    align-items: center;
+}
+
+.information_text span {
+    font-size: 20px;
+}
+
+.information_text img {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.envelope {
+    display: flex;
+    width: calc(100% - 100px);
+    height: 160px;
+    scale: 1;
+}
+
+.envelope svg {
+    width: 100vh;
+    height: 100%;
+}
+
+.information_swipe {
+    display: grid;
+    grid-gap: 10px;
+    margin-bottom: 70px;
+}
+
+.information_swipe svg:nth-child(1) {
+    opacity: 0;
+    transform: scale(0);
+    animation-name: information_swipe_svg_1;
+    animation-delay: 0.4s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.information_swipe svg:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+    animation-name: information_swipe_svg_2;
+    animation-delay: 0.2s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.information_swipe svg:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+    animation-name: information_swipe_svg_3;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes information_swipe_svg_1 {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes information_swipe_svg_2 {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes information_swipe_svg_3 {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
