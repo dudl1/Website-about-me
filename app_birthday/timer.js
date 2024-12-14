@@ -1,5 +1,9 @@
 function startCountdown(targetTime) {
     const timerElement = document.querySelector("#timer .count")
+
+    const timerDiv = document.getElementById('timer')
+    const Layers_Main = document.querySelector('.Layers_Main')
+
     let previousText = ""
     
     function updateTimer() {
@@ -7,7 +11,9 @@ function startCountdown(targetTime) {
         const remainingTime = targetTime - currentTime
 
         if (remainingTime <= 0) {
-            timerElement.textContent = "Осталось совсем чуть-чуть!"
+            timerElement.textContent = "Время истекло"
+            timerDiv.classList.add('active')
+            Layers_Main.classList.add('active')
             clearInterval(timerInterval)
             return
         }
@@ -32,5 +38,5 @@ function startCountdown(targetTime) {
 }
 
 const targetTime = new Date()
-targetTime.setHours(20, 40, 0, 0) // Установить цель на 20:30
+targetTime.setHours(0, 30, 0, 0) // 20 30
 startCountdown(targetTime)

@@ -11,6 +11,7 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     outline: none;
+    overflow: hidden;
 }
 
 body {
@@ -19,13 +20,17 @@ body {
 
 
 
-/********************* Layers_Main *********************/
+/********************* timer *********************/
 #timer {
     display: flex;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#timer.active {
+    display: none;
 }
 
 #timer .text {
@@ -46,11 +51,22 @@ body {
 
 /********************* Layers_Main *********************/
 .Layers_Main {
-    display: flex;
+    pointer-events: none;
+    display: none;
     height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    transition: 1s cubic-bezier(1, 0.01, 0.25, 1);
+}
+
+.Layers_Main.active {
+    pointer-events: all;
+    display: flex;
+}
+
+.Layers_Main.active2 {
+    opacity: 0;
 }
 
 .Layers_Main header {
@@ -60,6 +76,13 @@ body {
 .information_text {
     display: flex;
     align-items: center;
+    scale: 1;
+    transition: .3s ease;
+}
+
+.information_text.active {
+    opacity: 0;
+    scale: 0.85;
 }
 
 .information_text span {
@@ -75,7 +98,7 @@ body {
 
 .envelope {
     display: flex;
-    width: calc(100% - 70px);
+    width: calc(100% - 10px);
     max-width: 260px;
     height: 180px;
     scale: 1;
@@ -83,9 +106,13 @@ body {
 
 .envelope .top svg {
     position: absolute;
-    bottom: 105px;
+    bottom: 90px; /* 105px */
     max-width: 276px;
     width: 100%;
+    opacity: 0;
+    z-index: -99;
+    transform: rotateX(70deg);
+    transition: .3s ease;
 }
 
 .envelope svg {
@@ -98,6 +125,13 @@ body {
     grid-gap: 10px;
     margin-bottom: 70px;
     opacity: 0.7;
+    scale: 1;
+    transition: .3 ease;
+}
+
+.information_swipe.active {
+    opacity: 0;
+    scale: 0.85;
 }
 
 .information_swipe svg:nth-child(1) {
@@ -161,4 +195,69 @@ body {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+
+
+/********************* Open_Envelope *********************/
+.Open_Envelope {
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    scale: 0.3;
+    overflow: hidden;
+    transition: .6s cubic-bezier(1, 0.29, 0.25, 1);
+}
+
+.Open_Envelope.active {
+    pointer-events: all;
+    opacity: 1;
+    scale: 1;
+}
+
+.Open_Envelope .video_mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 60px);
+    height: calc(100% - 90px);
+    transition: .6s cubic-bezier(1, 0.29, 0.25, 1);
+}
+
+.Open_Envelope .video_mini.active {
+    width: calc(100% - 0px);
+    height: calc(100% - 0px);
+}
+
+.play {
+    position: absolute;
+    scale: 1;
+    opacity: 1;
+    z-index: 99;
+    transition: .5s cubic-bezier(1, 0.29, 0.25, 1);
+}
+
+.play.active {
+    scale: 0.6;
+    opacity: 0;
+}
+
+.video_mini video {
+    width: 100%;
+    border-radius: 33px;
+    filter: blur(2px);
+    height: 100%;
+    object-fit: cover;
+    transition: .6s cubic-bezier(1, 0.29, 0.25, 1);
+}
+
+.video_mini video.active {
+    border-radius: 0px;
+    filter: blur(0px);
 }
