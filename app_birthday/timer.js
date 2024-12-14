@@ -7,7 +7,7 @@ function startCountdown(targetTime) {
         const remainingTime = targetTime - currentTime
 
         if (remainingTime <= 0) {
-            timerElement.textContent = "Время истекло"
+            timerElement.textContent = "Осталось совсем чуть-чуть!"
             clearInterval(timerInterval)
             return
         }
@@ -32,5 +32,5 @@ function startCountdown(targetTime) {
 }
 
 const targetTime = new Date()
-targetTime.setHours(20, 30, 0, 0) // Установить цель на 20:30
+targetTime.setHours(20, 40, 0, 0) // Установить цель на 20:30
 startCountdown(targetTime)
