@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<!--<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -93,5 +93,74 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>\
     <script src="animation.js"></script>
     <script src="script.js"></script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebRTC Messaging</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <input type="text" id="messageInput" placeholder="Message">
+    <button onclick="sendMessage()">Send</button>
+    <ul id="messages"></ul>
+
+    <script>
+    const socket = io('http://localhost:3000');
+    const peer = new RTCPeerConnection({
+        iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+    });
+    let dataChannel = peer.createDataChannel("channel");
+
+    // Когда канал данных открыт
+    dataChannel.onopen = function (event) {
+      console.log("DataChannel is open");
+    };
+
+    // Обработка входящих сообщений через DataChannel
+    dataChannel.onmessage = function (event) {
+      console.log("Received message:", event.data);
+      document.getElementById('messages').innerHTML += `<li>${event.data}</li>`;
+    };
+
+    // Обработка кандидатов ICE
+    peer.onicecandidate = function(event) {
+        if (event.candidate) {
+            socket.emit('ice', event.candidate);
+        }
+    };
+
+    // При получении кандидата от другого пира
+    socket.on('ice', function(candidate) {
+        peer.addIceCandidate(new RTCIceCandidate(candidate));
+    });
+
+    // Обмен описаниями сессии
+    peer.onnegotiationneeded = async () => {
+        const offer = await peer.createOffer();
+        await peer.setLocalDescription(offer);
+        socket.emit('sdp', peer.localDescription);
+    };
+
+    socket.on('sdp', async (description) => {
+        if (description.type === 'offer' && peer.signalingState !== 'stable') {
+            await peer.setRemoteDescription(description);
+            const answer = await peer.createAnswer();
+            await peer.setLocalDescription(answer);
+            socket.emit('sdp', peer.localDescription);
+        } else if (description.type === 'answer') {
+            await peer.setRemoteDescription(description);
+        }
+    });
+
+    function sendMessage() {
+        const message = document.getElementById('messageInput').value;
+        dataChannel.send(message);
+        document.getElementById('messages').innerHTML += `<li>You: ${message}</li>`;
+    }
+    </script>
 </body>
 </html>
