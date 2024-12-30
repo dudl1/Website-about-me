@@ -114,11 +114,8 @@
     <ul id="messages"></ul>
 
     <script>
-    const socket = io('https://ivalery.tech/', { // Используйте публичный URL вашего сервера
+    const socket = io('https://1234abcd.ngrok.io', {
       withCredentials: true,
-      extraHeaders: {
-        "my-custom-header": "abcd"
-      }
     });
 
     let peer = new RTCPeerConnection({
