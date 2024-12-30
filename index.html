@@ -97,6 +97,11 @@
 </html>-->
 
 
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,18 +114,23 @@
     <ul id="messages"></ul>
 
     <script>
-    const socket = io('http://localhost:3000');
-    const peer = new RTCPeerConnection({
-        iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+    const socket = io('https://ivalery.tech/', { // Используйте публичный URL вашего сервера
+      withCredentials: true,
+      extraHeaders: {
+        "my-custom-header": "abcd"
+      }
     });
-    let dataChannel = peer.createDataChannel("channel");
 
-    // Когда канал данных открыт
+    let peer = new RTCPeerConnection({
+        iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] // Использование публичного STUN сервера
+    });
+
+    let dataChannel = peer.createDataChannel("chat");
+
     dataChannel.onopen = function (event) {
       console.log("DataChannel is open");
     };
 
-    // Обработка входящих сообщений через DataChannel
     dataChannel.onmessage = function (event) {
       console.log("Received message:", event.data);
       document.getElementById('messages').innerHTML += `<li>${event.data}</li>`;
@@ -138,7 +148,7 @@
         peer.addIceCandidate(new RTCIceCandidate(candidate));
     });
 
-    // Обмен описаниями сессии
+    // Обработка SDP описаний
     peer.onnegotiationneeded = async () => {
         const offer = await peer.createOffer();
         await peer.setLocalDescription(offer);
