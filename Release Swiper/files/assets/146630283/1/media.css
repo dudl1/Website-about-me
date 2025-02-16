@@ -1,0 +1,295 @@
+@media screen and (min-width: 1200px) {
+
+    ::-webkit-scrollbar { width: 0px; }
+
+
+
+    .for-stop-game,
+    #score,
+    .button-detail,
+    .button-setting,
+    .skin,
+    .color,
+    .sc-howPlay-span,
+    .this_block_basik > div > span:last-child, .this_block_basik > div > div:last-child,
+    .this_block_basik > div > span:last-child, .this_block_basik > div > div:last-child,
+    .this_block_basik > div > span:last-child, .this_block_basik > div > div:last-child {
+        cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHXSURBVHgBxVVLL0NBFP7OtCgLtSTi2ZWFVyISiRW2WFnYsiQi9oKIXyAeiYT4A36BFVYiqIRE0FYiovVoQ9Kk9PY4t7TR9L5EG18yk3tnzvnOOTPfzAA24IfrPg6e3nHgJMWh02VmVnAIsiUPHIfErCE74HaPU33rJhzAMgsOHdXkEOtIJn1wCJsSKww8FKMw5H+DDXkcRSQ3AHObqGaRA/5BO1NLtfCFbKjHdW9qEIvu4C1aDY1vwDSL8poIenoSRJQqAPmztJfM36M0b5qTaYn6RxYKSZ4Lj7eleGrhRP1/StEOZHmg3HrH14d1UO5p2YoqlHq3qNZ3AHvYnlQlt1wZVMmeZDEjuzyGxOs+B/2j6dlyjzkBQeTGGiwzD5z1imFjbk6pbb49j+AjHpaKYJh1ShpTEt/VG5N7EEUib7wE2vuuEMdgmrm+3mxeWVKDotr2Y8l8zcSkytSZWT8jlufkSy2NHRPSr+I3IPEluEznNWhpcrkLmJo7JQAtwym1DrMnT9+RSpc/Z5KaO6akX4HzAMbLomiDuoae8iJLgElxmYcDHUvJBlJUZ9BK59Jfhj5NnQvynPmk7HWQupRgGRL+0ZBdc100ynUlX3Ooq+imgeGwPvwJQwKfywBRYMMAAAAASUVORK5CYII='), pointer !important;
+    }
+
+    .swipeArea {
+        cursor:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADGUExURQAAAP/////////////U1P+/n//GuP/l2f/Cqv/fyv/f1P/gzP+/rf/b0f+/p//Xz//g0f/i0//c0f/c0v/l3f/Brv/hzv/k2f/Asf/Erv/Esf/f0f+9q/+9qf/dz//f0f/f0P/ezv+/q//ez//Aq//g0f/dzv/BrP/g0P/Brv/Arv/h0f/fz//ArP/Crv/g0P/ezv++rP+/rP/f0f/dzv/ez/+/q//ez//e0P/ez/++qv++qv+/q//OvP/ez/++qv/OvP/ezwBmaQUAAAA/dFJOUwABAgQGEBIUFRgYGRwcICAhIywzPEJDQ0VFRVlhfH+PkZOUlJWVl5ycoamrur7ExMzN1tjc3+jv8vr8/v7+/jV3KL8AAACgSURBVCjPrc/FFsJQEAPQlOLFtbi7u3fI//8UC6D0FTiHBVnexWQCvBKfXaYRvGfEq0yaZY+CyfF8z6uIyFDxNcm7n3UHB2i7DHox28MOF9n6PruYX7z4J7fvh37rNYForZ+BZrhd35AswXD35kjykE+pXkCaJMmd29HhK87/tdYHzwJA/c2PfgBAw+3tx6qqpfgi+Jyb6K6sh5+WFS9wA3MuVDvBY68BAAAAAElFTkSuQmCC'), grab;
+    }
+
+
+
+    /* window_start */
+    .animPlay .block-check-for-ws {
+        margin-left: -93px !important;
+    }
+
+    .animPlay .for-stop-game {
+        top: -50px !important;
+        left: 44px !important;
+    }
+
+    .animPause .block-check-for-ws {
+        margin-left: -131px !important; /* margin-left: -96px !important; en */
+    }
+
+
+    .animPlayEn .block-check-for-ws {
+        margin-left: -57px !important;
+    }
+
+    .animPlayEn .for-stop-game {
+        top: -50px !important;
+        left: 8px !important;
+    }
+
+    .animPauseEn .block-check-for-ws {
+        margin-left: -97px !important;
+    }
+
+
+    .block-check-for-ws {
+        font-size: 32px !important;
+    }
+
+    .block-check,
+    .nav-bar {
+        margin: 50px !important;
+    }
+
+    .nav-bar {
+        width: 175px !important;
+        height: 80px !important;
+    }
+
+    .icon-detail > svg {
+        transform: scale(0.85) !important;
+    }
+
+    .icon-setting > svg {
+        transform: scale(0.85) !important;
+    }
+
+    .button-detail:hover,
+    .button-setting:hover {
+        transform: scale(0.95);
+    }
+
+
+
+    /* template_ds */
+    .template_ds {
+        grid-template-columns: 350px auto !important;
+    }
+
+    .left-panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-panel > span {
+        color: rgb(255 255 255 / 50%);
+        writing-mode: vertical-rl;
+        letter-spacing: 25px;
+        font-size: 90px;
+        font-weight: 700;
+    }
+
+    .container-panels {
+        grid-template-rows: 134px auto !important;
+    }
+
+    .top-panel > span {
+        margin: 0 50px !important;
+        font-size: 32px !important;
+    }
+
+    .center-panel > span {
+        margin: 10px 50px !important;
+        font-size: 14px !important;
+    }
+
+    .content {
+        margin: 60px 50px !important;
+    }
+
+
+    @keyframes top_panel {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-200px);
+        }
+    }
+
+
+
+    /* content_detail */
+    .content_detail_skin_label,
+    .content_detail_colorPlace_label > span:first-child {
+        font-size: 25px !important;
+    }
+
+    .content_detail_colorPlace_label > span:last-child {
+        font-size: 14px !important;
+    }
+
+    .change_skin,
+    .change_colorPlace {
+        margin: 25px 0 !important;
+    }
+
+    .skin,
+    .color {
+        margin-right: 12px !important;
+        height: 55px !important;
+        padding: 27px 55px !important;
+    }
+
+    .skin:hover,
+    .color:hover {
+        transform: scale(0.95);
+    }
+
+
+
+    /* content_setting */
+    .blockSettingAnim {
+        margin-top: -195px !important;
+    }
+
+    .containerBlockSettingAnim {
+        height: 273px !important;
+    }
+
+
+    .content_setting_label_setting > span {
+        margin-right: 25px !important;
+        font-size: 25px !important;
+    }
+
+    .container-state_block_setting {
+        margin-top: 50px !important;
+    }
+
+    .this_block_basik > div {
+        margin-bottom: 25px !important;
+    }
+
+    .this_block_basik > div > span:first-child {
+        font-size: 25px !important;
+    }
+
+    .you-sound > div,
+    .you-music > div {
+        margin-top: -25px;
+    }
+
+    .you-sound > div > span:last-child,
+    .you-music > div > span:last-child {
+        margin-top: -3px;
+    }
+
+    .this_block_basik > div > span:last-child,
+    .this_block_basik > div > div:last-child {
+        font-size: 22px !important;
+    }
+
+    .this_block_howPlay {
+        max-width: 550px !important;
+        height: 270px !important;
+    }
+
+    .this_block_howPlay > video {
+        height: calc(100% - 50px) !important;
+    }
+
+    .you-language > div > span > svg {
+        transform: scale(1.08) !important;
+    }
+
+    .you-language {
+        overflow: initial;
+    }
+
+    .you-language {
+        height: 20px !important;
+        overflow: unset !important;
+    }
+
+    .sc-howPlay-span {transition: .1s ease-in-out;}
+    .sc-howPlay-span:hover {font-size: 24px;}
+
+    .you-sound > div > span:hover,
+    .you-music > div > span:hover {
+        transform: scale(0.95);
+    }
+
+    .you-language > div > span > svg:hover {width: 28px;}
+
+
+
+    /* active_play */
+    .for-stop-game {
+        margin: 53.5px 50px !important;
+    }
+
+    .for-stop-game > svg {
+        width: 20px !important;
+        height: 30px !important;
+    }
+
+
+
+    /* active_pause */
+    .container-pause-label,
+    .loser-label,
+    .education-label {
+        margin-top: 50px !important;
+    }
+
+    .container-pause-label > span,
+    .loser-label, .education-label {
+        font-size: 32px !important;
+    }
+
+    .container-pause-label > svg {
+        margin: 0 13px !important;
+        transform: scale(1.3);
+    }
+
+
+
+    /* active_loser */
+    .active-loser-result {
+        grid-gap: 50px !important;
+    }
+
+    .active-loser-result > div > span:first-child {
+        font-size: 16px !important;
+    }
+
+    .active-loser-result > div > span:last-child {
+        margin-top: 5px;
+        font-size: 27px !important;
+    }
+
+
+
+    /* active_education */
+    .howToPlay {
+        width: 700px !important;
+        height: 350px !important;
+        border-radius: 38px !important;
+    }
+
+    .howToPlay > video {
+        height: 330px !important;
+    }
+}
