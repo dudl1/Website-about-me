@@ -1,0 +1,17 @@
+[
+  {
+    "img": "/images_dishes/manty.png",
+    "name": "манты",
+    "color": "#F5A623"
+  },
+  {
+    "img": "/images_dishes/pelmeni.png",
+    "name": "пельмени",
+    "color": "#50E3C2"
+  },
+  {
+    "img": "/images_dishes/borshch.png",
+    "name": "борщ",
+    "color": "#D0021B"
+  }
+]
