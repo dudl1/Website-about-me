@@ -2,16 +2,41 @@
   {
     "img": "/images_dishes/manty.png",
     "name": "манты",
-    "color": "#F5A623"
+    "color": "#8F8217"
   },
   {
     "img": "/images_dishes/pelmeni.png",
-    "name": "пельмени",
-    "color": "#50E3C2"
+    "name": "кундюмы",
+    "color": "#9C6242"
   },
   {
     "img": "/images_dishes/borshch.png",
-    "name": "борщ",
-    "color": "#D0021B"
-  }
+    "name": "позы",
+    "color": "#9C6242"
+  },
+  {
+    "img": "/images_dishes/borshch.png",
+    "name": "дюшбара",
+    "color": "#9C6242"
+  },
+  {
+    "img": "/images_dishes/borshch.png",
+    "name": "хинкали",
+    "color": "#9C6242"
+  },
+  {
+    "img": "/images_dishes/borshch.png",
+    "name": "равиоли",
+    "color": "#8F8217"
+  },
+  {
+    "img": "/images_dishes/borshch.png",
+    "name": "вареники",
+    "color": "#9C6242"
+  },
+  {
+    "img": "/images_dishes/borshch.png",
+    "name": "керплах",
+    "color": "#9C6242"
+  },
 ]
