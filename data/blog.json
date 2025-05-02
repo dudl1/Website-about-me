@@ -27,6 +27,7 @@
     "id": "4",
     "date": "19.05.2025",
     "type": "ads",
+    "img_path": "https://raw.githubusercontent.com/dudl1/Website-about-me/refs/heads/main/data/index/images_ads_blog/ads_4.jpg",
     "minutes_to_read": "1",
     "title": "Только сегодня! Скидка 30% на пельмени с говядиной!",
     "text": [
@@ -83,6 +84,7 @@
     "id": "9",
     "date": "14.05.2025",
     "type": "ads",
+    "img_path": "https://raw.githubusercontent.com/dudl1/Website-about-me/refs/heads/main/data/index/images_ads_blog/ads_9.jpg",
     "minutes_to_read": "1",
     "title": "Новинка! Пельмени с олениной и брусникой!",
     "text": [
@@ -139,6 +141,7 @@
     "id": "14",
     "date": "09.05.2025",
     "type": "ads",
+    "img_path": "https://raw.githubusercontent.com/dudl1/Website-about-me/refs/heads/main/data/index/images_ads_blog/ads_14.jpg",
     "minutes_to_read": "1",
     "title": "Специальное предложение ко Дню Победы!",
     "text": [
@@ -195,6 +198,7 @@
     "id": "19",
     "date": "04.05.2025",
     "type": "ads",
+    "img_path": "https://raw.githubusercontent.com/dudl1/Website-about-me/refs/heads/main/data/index/images_ads_blog/ads_19.jpg",
     "minutes_to_read": "1",
     "title": "Уникальный мастер-класс по лепке пельменей!",
     "text": [
